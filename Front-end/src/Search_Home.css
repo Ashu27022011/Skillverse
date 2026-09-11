@@ -1,0 +1,76 @@
+/* MessageSearchBar.css */
+.message-bar-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(90%, 700px);
+  transform: translate(-50%, -50%);
+}
+
+.message-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #090909;
+  border: 1px solid #2c2c2c;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+.message-bar input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 1rem;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.message-bar input::placeholder {
+  color: #8d8d8d;
+}
+
+.message-bar button {
+  padding: 12px 20px;
+  color: #050505;
+  font-weight: 700;
+  background: #fff;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.message-bar button:hover:not(:disabled) {
+  background: #d6d6d6;
+  transform: translateY(-1px);
+}
+
+.message-bar button:disabled,
+.message-bar input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.message-status {
+  margin: 10px 0 0;
+  color: #ff8585;
+  text-align: center;
+}
+
+.message-status.success {
+  color: #85e69a;
+}
+
+@media (max-width: 480px) {
+  .message-bar {
+    padding: 7px;
+  }
+
+  .message-bar button {
+    padding: 12px 14px;
+  }
+}

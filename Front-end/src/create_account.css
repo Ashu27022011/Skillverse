@@ -1,0 +1,377 @@
+:root {
+  --glass-bg: rgba(20, 19, 30, 0.56);
+  --glass-surface: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --purple-glow: rgba(128, 92, 255, 0.92);
+  --purple-bright: rgba(170, 148, 255, 0.9);
+  --soft-purple: rgba(196, 148, 255, 0.3);
+  --text-soft: rgba(232, 228, 240, 0.8);
+  --text-strong: #f5f5fb;
+  --field-bg: rgba(9, 10, 18, 0.7);
+  --field-border: rgba(255, 255, 255, 0.08);
+  --green: #7ef0ba;
+  --green-deep: #6ee6ad;
+  --danger: #ff8a8a;
+}
+
+* { box-sizing: border-box; }
+
+.create-account-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(9, 9, 20, 0.42), rgba(11, 12, 24, 0.62)),
+    url('./assets/Back_groundimg/Universe_createacc.webp') center / cover no-repeat;
+  font-family: 'Manrope', sans-serif;
+}
+
+.create-account-card {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 480px);
+  padding: 28px 26px 24px;
+  border-radius: 26px;
+  background: rgba(19, 18, 29, 0.37);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 40px rgba(15, 14, 20, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.card-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.back-button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-soft);
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--text-strong);
+  transform: translateY(-50%) translateX(-2px);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.card-header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: var(--text-strong);
+}
+
+.card-header p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-strong);
+}
+
+.field-group span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(245, 245, 251, 0.92);
+}
+
+.field-group input,
+.field-group textarea {
+  width: 100%;
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  background: rgba(11, 13, 20, 0.7);
+  color: var(--text-strong);
+  padding: 14px 14px;
+  outline: none;
+  font-size: 0.96rem;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.field-group input::placeholder,
+.field-group textarea::placeholder {
+  color: rgba(196, 198, 214, 0.54);
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: rgba(144, 146, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(130, 116, 255, 0.15);
+  background: rgba(14, 16, 24, 0.8);
+}
+
+.field-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  max-height: 220px;
+}
+
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap input {
+  padding-right: 46px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: rgba(222, 224, 240, 0.7);
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: var(--text-strong);
+}
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.bio-field small {
+  margin-top: -2px;
+  text-align: right;
+  font-size: 0.7rem;
+  color: rgba(222, 224, 240, 0.7);
+}
+
+.profile-upload-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 6px 0 4px;
+}
+
+.profile-upload {
+  width: 174px;
+  height: 174px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-strong);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.profile-upload.has-preview {
+  border-radius: 50%;
+  border-color: rgba(255,255,255,0.18);
+  background: transparent;
+}
+
+.upload-icon {
+  position: relative;
+  z-index: 1;
+  width: 82px;
+  height: 82px;
+  fill: rgba(245, 245, 251, 0.95);
+  stroke: rgba(245, 245, 251, 0.95);
+  stroke-width: 1.2;
+  opacity: 0.9;
+}
+
+.upload-text {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 0.76rem;
+  letter-spacing: 0;
+  opacity: 0.9;
+}
+
+.profile-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-field {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inline-skill-input {
+  gap: 8px;
+}
+
+.skill-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.skill-input-row input {
+  flex: 1;
+}
+
+.skill-add-button,
+.primary-submit {
+  border: 0;
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.skill-add-button {
+  min-width: 72px;
+  padding: 0 14px;
+  background: linear-gradient(180deg, rgba(110, 230, 173, 0.95), rgba(82, 190, 133, 0.9));
+  color: #07120d;
+}
+
+.primary-submit {
+  width: 100%;
+  margin-top: 6px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(122, 90, 255, 0.95), rgba(165, 122, 255, 0.9));
+  color: #fff;
+}
+
+.skill-add-button:hover,
+.primary-submit:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.skill-list-wrap {
+  min-height: 88px;
+  max-height: 180px;
+  overflow: auto;
+  padding: 10px 10px 8px;
+  border-radius: 14px;
+  border: 1px solid var(--field-border);
+  background: rgba(11, 13, 20, 0.72);
+}
+
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(138, 120, 255, 0.15);
+  border: 1px solid rgba(172, 157, 255, 0.18);
+  color: var(--text-strong);
+  font-size: 0.77rem;
+}
+
+.skill-list button {
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,0.78);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.skill-empty {
+  display: grid;
+  place-items: center;
+  min-height: 72px;
+  color: rgba(222, 224, 240, 0.56);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.form-error {
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: rgba(255, 138, 138, 0.12);
+  border: 1px solid rgba(255, 138, 138, 0.24);
+  color: #ffd5d5;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 560px) {
+  .create-account-card {
+    padding: 24px 18px 20px;
+  }
+
+  .card-header p {
+    font-size: 0.8rem;
+  }
+
+  .skill-input-row {
+    flex-direction: column;
+  }
+
+  .skill-add-button {
+    min-height: 44px;
+  }
+}

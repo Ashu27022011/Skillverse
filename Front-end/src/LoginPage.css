@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.login-shell { min-height: 100vh; display: grid; place-items: center; position: relative; overflow: hidden; padding: 24px; color: #f7f7f2; background: linear-gradient(rgba(9, 9, 20, .42), rgba(11, 12, 24, .62)), url('./assets/Back_groundimg/Universe_createacc.webp') center / cover no-repeat; font-family: 'Manrope', sans-serif; }
+.login-shell::before { position: absolute; inset: -20%; content: ''; background: radial-gradient(circle at 30% 25%, rgba(118, 79, 255, .2), transparent 30%), radial-gradient(circle at 75% 75%, rgba(70, 220, 173, .12), transparent 31%); filter: blur(2px); pointer-events: none; }
+.login-brandmark { position: absolute; top: 24px; left: 24px; width: 44px; height: 44px; display: grid; place-items: center; background: rgba(6, 13, 10, .26); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; backdrop-filter: blur(8px); }
+.login-brandmark img { width: 28px; height: 28px; object-fit: contain; filter: brightness(1.12); }
+.login-card { position: relative; z-index: 1; width: min(92vw, 440px); padding: 30px 28px 23px; border: 1px solid rgba(255,255,255,.14); border-radius: 26px; background: rgba(19,18,29,.37); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 12px 40px rgba(15,14,20,.45); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.login-heading { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; text-align: center; }
+.login-avatar { width: 62px; height: 62px; display: grid; place-items: center; margin-bottom: 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; background: rgba(255,255,255,.08); box-shadow: 0 0 25px rgba(154,126,255,.24); }
+.login-avatar img { width: 38px; height: 38px; object-fit: contain; }
+.login-heading h1 { margin: 0; color: #f5f5fb; font: 800 clamp(2.2rem, 7vw, 2.8rem)/1 'Space Grotesk', sans-serif; letter-spacing: -.06em; }
+.login-heading p { margin: 9px 0 0; color: rgba(232,228,240,.8); font-size: .85rem; }
+.login-form { display: flex; flex-direction: column; gap: 14px; }
+.login-field { display: flex; flex-direction: column; gap: 8px; color: rgba(245,245,251,.92); font-size: .82rem; font-weight: 700; }
+.login-field input { width: 100%; padding: 14px; color: #f5f5fb; background: rgba(11,13,20,.7); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; outline: none; font-size: .93rem; transition: border-color .2s ease, box-shadow .2s ease; }
+.login-field input:focus { border-color: rgba(144,146,255,.7); box-shadow: 0 0 0 3px rgba(130,116,255,.15); }
+.login-field input::placeholder { color: rgba(196,198,214,.54); }
+.login-password { position: relative; }
+.login-password input { padding-right: 62px; }
+.login-password button { position: absolute; top: 50%; right: 9px; padding: 6px; transform: translateY(-50%); color: #bcb4f4; background: transparent; border: 0; font-size: .72rem; font-weight: 700; }
+.login-submit { width: 100%; margin-top: 5px; padding: 15px 18px; color: #fff; background: linear-gradient(135deg, rgba(122,90,255,.95), rgba(165,122,255,.9)); border: 0; border-radius: 12px; font-weight: 800; transition: transform .18s ease, filter .18s ease; }
+.login-submit:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); }
+.login-submit:disabled { cursor: wait; opacity: .65; }
+.login-error { margin: 0; padding: 9px 12px; color: #ffd5d5; background: rgba(255,138,138,.12); border: 1px solid rgba(255,138,138,.24); border-radius: 10px; font-size: .78rem; }
+.login-links { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 18px; }
+.login-links button, .login-links a { padding: 0; color: #a8cfff; background: transparent; border: 0; font-size: .69rem; text-align: center; text-decoration: none; }
+.login-links button:hover, .login-links a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 480px) { .login-shell { padding: 16px; } .login-card { padding: 25px 19px 20px; } .login-brandmark { top: 16px; left: 16px; } }
